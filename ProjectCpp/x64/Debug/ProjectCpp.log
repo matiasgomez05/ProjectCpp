@@ -1,0 +1,10 @@
+﻿  Cuenta.cpp
+C:\Users\matias\source\repos\ProjectCpp\ProjectCpp\Cuenta.cpp(22,17): warning C4244: 'argumento': conversión de 'double' a 'const _Elem'; posible pérdida de datos
+          with
+          [
+              _Elem=char
+          ]
+C:\Users\matias\source\repos\ProjectCpp\ProjectCpp\Cuenta.cpp(26,13): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
+Cuenta.obj : error LNK2001: símbolo externo "public: static double const Cuenta::saldoMinimo" (?saldoMinimo@Cuenta@@2NB) sin resolver
+MSVCRTD.lib(exe_main.obj) : error LNK2019: símbolo externo main sin resolver al que se hace referencia en la función "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\matias\source\repos\ProjectCpp\x64\Debug\ProjectCpp.exe : fatal error LNK1120: 2 externos sin resolver
