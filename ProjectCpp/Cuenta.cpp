@@ -1,10 +1,11 @@
-#include"Cuenta.hpp"
+#include"Cuenta.h"
 #include<iostream>
 #include<sstream>
 
 const double Cuenta::saldoMinimo = 10000;
 
-Cuenta::Cuenta(string codigo, double saldo) {
+Cuenta::Cuenta(Cliente* cliente, string codigo, double saldo) {
+	this->cliente = cliente;
 	this->codigo = codigo;
 	this->saldo = saldo;
 	this->consignaciones = 0;
@@ -37,6 +38,14 @@ int Cuenta::getConsignaciones() {
 
 int Cuenta::getRetiros() {
 	return retiros;
+}
+
+Cliente* Cuenta::getCliente() {
+	return cliente;
+}
+
+void Cuenta::setCliente(Cliente* cliente) {
+	this->cliente = cliente;
 }
 
 void Cuenta::depositar(double monto) {

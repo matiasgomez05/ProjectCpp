@@ -1,17 +1,20 @@
 #pragma once
+#include"Cliente.h";
 #include<string>
 
 using namespace std;
 
+class Cliente;
 class Cuenta {
-	int id;
+	int idCuenta;
 	string codigo;
 	double saldo;
 	int consignaciones;
 	int retiros;
+	Cliente* cliente;
 	void setSaldo(double saldo);
 public:
-	Cuenta(string codigo, double saldo);
+	Cuenta(Cliente* cliente, string codigo, double saldo);
 	~Cuenta();
 	const static double saldoMinimo;
 	string getCodigo();
@@ -19,6 +22,8 @@ public:
 	double getSaldo();
 	int getConsignaciones();
 	int getRetiros();
+	Cliente* getCliente();
+	void setCliente(Cliente* cliente);
 	void depositar(double monto);
 	bool retirar(double monto);
 	bool transferir(Cuenta* cuentaDestino, double monto);

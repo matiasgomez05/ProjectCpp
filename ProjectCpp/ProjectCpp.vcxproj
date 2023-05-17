@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Cuenta.hpp" />
+    <ClInclude Include="Cuenta.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cuenta.cpp" />

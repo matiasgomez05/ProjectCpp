@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Cuenta.hpp"
+#include "Cuenta.h"
 
 using namespace std;
 
@@ -8,8 +8,8 @@ int main() {
 	Cuenta* c2 = new Cuenta("AA002", 100000);
 	
 	c1->depositar(10000);
-	c2->retirar(1000);
-	c1->transferir(c2, 300000);
+	c1->retirar(1000);
+	c1->transferir(c2, 40000);
 
 	c2->setCodigo("BB001");
 	
