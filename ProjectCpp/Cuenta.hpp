@@ -1,5 +1,5 @@
 #pragma once
-#include <string>
+#include<string>
 
 using namespace std;
 
@@ -10,18 +10,19 @@ class Cuenta {
 	int consignaciones;
 	int retiros;
 	void setSaldo(double saldo);
-	string toString(double monto);
 public:
 	Cuenta(string codigo, double saldo);
 	~Cuenta();
 	const static double saldoMinimo;
 	string getCodigo();
-	void setCodigo(double codigo);
-	int getSaldo();
+	void setCodigo(string codigo);
+	double getSaldo();
 	int getConsignaciones();
 	int getRetiros();
 	void depositar(double monto);
 	bool retirar(double monto);
 	bool transferir(Cuenta* cuentaDestino, double monto);
+	string parseString(double valor);
+	string toString();
 };
 

@@ -1,7 +1,8 @@
-#include "Cuenta.hpp"
+#include"Cuenta.hpp"
+#include<iostream>
 #include<sstream>
 
-const static double saldoMinimo = 10000;
+const double Cuenta::saldoMinimo = 10000;
 
 Cuenta::Cuenta(string codigo, double saldo) {
 	this->codigo = codigo;
@@ -15,15 +16,15 @@ Cuenta::~Cuenta() {
 }
 
 string Cuenta::getCodigo() {
-	return this->codigo;
+	return codigo;
 }
 
-void Cuenta::setCodigo(double codigo) {
+void Cuenta::setCodigo(string codigo) {
 	this->codigo = codigo;
 }
 
-int Cuenta::getSaldo() {
-	return this->saldo;
+double Cuenta::getSaldo() {
+	return saldo;
 }
 
 void Cuenta::setSaldo(double saldo) {
@@ -31,21 +32,21 @@ void Cuenta::setSaldo(double saldo) {
 }
 
 int Cuenta::getConsignaciones() {
-	return this->consignaciones;
+	return consignaciones;
 }
 
 int Cuenta::getRetiros() {
-	return this->retiros;
+	return retiros;
 }
 
 void Cuenta::depositar(double monto) {
-	setSaldo( getSaldo()+monto );
+	saldo += monto;
 	consignaciones++;
 }
 
 bool Cuenta::retirar(double monto) {
-	if (monto <= getSaldo() - saldoMinimo){
-		setSaldo(getSaldo() - monto);
+	if (monto <= ( saldo - saldoMinimo ) ){
+		saldo -= monto;
 		retiros++;
 
 		return true;
@@ -63,6 +64,17 @@ bool Cuenta::transferir(Cuenta* cuentaDestino, double monto) {
 	return false;
 }
 
-string Cuenta::toString(double monto) { 
+string Cuenta::parseString(double valor) {
+	ostringstream aux;
+	aux << valor;
 
+	return aux.str();
+}
+
+string Cuenta::toString() { 
+	return
+		"Cuenta Nro: " + codigo + ", " +
+		"Saldo: " + parseString(saldo) + ", " +
+		"Consignaciones: " + parseString(consignaciones) + ", " +
+		"Retiros: " + parseString(retiros) + ". ";
 }
