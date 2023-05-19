@@ -1,4 +1,5 @@
 #include "Cliente.h"
+#include<sstream>
 
 Cliente::Cliente(int idCliente, string nombre, string apellido, EGenero genero, string telefono) {	
 	this->idCliente = idCliente, 
@@ -59,5 +60,23 @@ vector<Cuenta*> Cliente::obtenerCuentas() {
 }
 
 void Cliente::agregarCuenta(Cuenta* nuevaCuenta) {
+	//Agrega al final de la lista
 	cuentas.push_back(nuevaCuenta);
+}
+
+string Cliente::parseNum(double valor) {
+	ostringstream aux;
+	aux << valor;
+
+	return aux.str();
+}
+
+string Cliente::toString() {
+	string stringGenero = (Cliente::getGenero() == EGenero::MASCULINO) ? "Masculino" : "Femenino";
+	return
+		"ID: " + parseNum(idCliente) + ", " +
+		"Nombre: " + nombre + ", " +
+		"Apellido: " + apellido + ", " +
+		"Genero: " + stringGenero + ", " +
+		"Telefono: " + telefono + ". ";
 }

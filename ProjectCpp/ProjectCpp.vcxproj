@@ -127,9 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Cliente.h" />
     <ClInclude Include="Cuenta.h" />
+    <ClInclude Include="EGenero.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="Cuenta.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

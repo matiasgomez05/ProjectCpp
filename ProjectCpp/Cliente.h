@@ -2,6 +2,7 @@
 #include"Cuenta.h";
 #include"EGenero.h";
 #include<vector>;
+#include<string>
 
 using namespace std;
 
@@ -29,5 +30,7 @@ public:
 	void setTelefono(string telefono);
 	vector<Cuenta*> obtenerCuentas();
 	void agregarCuenta(Cuenta* cuenta);
+	string parseNum(double valor);
+	string toString();
 };
 
